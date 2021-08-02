@@ -1,0 +1,9 @@
+
+[JDBC Driver]
+
+Oracle Database 12.2.0.1 JDBC Driver & UCP Downloads
+https://www.oracle.com/database/technologies/jdbc-ucp-122-downloads.html
+
+Filename : ojdbc8.jar
+
+톰캣 라이브러리에 추가할 것 

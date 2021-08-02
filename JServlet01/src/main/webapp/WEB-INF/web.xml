@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+id="WebApp_ID" version="4.0">
+
+  <display-name>JServlet01</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  
+  <servlet-mapping>
+  	<servlet-name>step01</servlet-name> <!--둘-->
+  	<url-pattern>/step01</url-pattern> <!--첫-->
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>step02</servlet-name> <!--둘-->
+  	<url-pattern>/step02</url-pattern> <!--첫-->
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>step01</servlet-name> <!--셋-->
+  	<servlet-class>jservlet01.s01.step01</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>step02</servlet-name> <!--셋-->
+  	<servlet-class>jservlet01.s01.step02</servlet-class>
+  </servlet>
+  
+  
+</web-app>
