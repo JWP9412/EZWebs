@@ -12,6 +12,16 @@ public class MemberVO {
 	private String email;
 	private Date regdate;
 	
+	public MemberVO() {}
+	public MemberVO(String mid, String mname, String pwd, String email) {
+		super();
+		this.mid = mid;
+		this.mname = mname;
+		this.pwd = pwd;
+		this.email = email;
+		
+	}
+	
 	public String getMid() {
 		return mid;
 	}
