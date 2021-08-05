@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,9 +37,11 @@ public class MemberList extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 
+		MemberDBCP memberDBCP = new MemberDBCP();
+		
 		String command = request.getParameter("command");
 		if (command != null) {
-			MemberDBCP memberDBCP = new MemberDBCP();
+			
 
 			if (command.equals("addMember")) {
 				String mid = request.getParameter("mid");
@@ -63,50 +66,13 @@ public class MemberList extends HttpServlet {
 			}
 
 		}
-
-		PrintWriter out = response.getWriter();
-		outHtmlHeader(out);
-		outHtmlMembers(out);
-		outHtmlFooter(out);
-
-	}
-
-	static void outHtmlHeader(PrintWriter out) {
-		out.print("<html><body>");
-		out.print("<h1>멤버 리스트</h1><hr>");
-		out.print("<table border = 1>");
-		out.print("<tr align = 'center' bgcolor='lightgreen'>");
-		out.print("<td>아이디</td>");
-		out.print("<td>이름</td>");
-		out.print("<td>비밀번호</td>");
-		out.print("<td>이메일</td>");
-		out.print("<td>등록일자</td>");
-		out.print("<td>삭제</td>");
-		out.print("</tr>");
-	}
-
-	static void outHtmlMembers(PrintWriter out) {
-		MemberDBCP memberDBCP = new MemberDBCP();
+		
 		List<MemberVO> members = memberDBCP.getMembers();
-
-		for (int cnt = 0; cnt < members.size(); cnt++) {
-			MemberVO member = (MemberVO) members.get(cnt);
-			out.print("<tr>");
-			out.printf("<td>%s</td>", member.getMid());
-			out.printf("<td>%s</td>", member.getMname());
-			out.printf("<td>%s</td>", member.getPwd());
-			out.printf("<td>%s</td>", member.getEmail());
-			out.printf("<td>%s</td>", member.getRegdate());
-			out.printf("<td><a href='/JServlet05/memberlist?command=delMember&mid=%s'>삭제</a></td>", member.getMid());
-			out.print("</tr>");
-		}
-
+		
+		request.setAttribute("members", members);
+		
+		RequestDispatcher dispatch = request.getRequestDispatcher("memberview");
+		dispatch.forward(request, response);
 	}
-
-	static void outHtmlFooter(PrintWriter out) {
-		out.print("</table>");
-		out.print("<a href='/JServlet05/memberlist.html'>멤버 등록</a>");
-		out.print("</body></html>");
-	}
-
+		
 }

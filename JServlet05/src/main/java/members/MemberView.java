@@ -35,39 +35,15 @@ public class MemberView extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-
-		String command = request.getParameter("command");
-		if (command != null) {
-			MemberDBCP memberDBCP = new MemberDBCP();
-
-			if (command.equals("addMember")) {
-				String mid = request.getParameter("mid");
-				String mname = request.getParameter("mname");
-				String pwd = request.getParameter("pwd");
-				String email = request.getParameter("email");
-
-				if (mid != null && mid.isEmpty() != true) {
-					MemberVO member = new MemberVO(mid, mname, pwd, email);
-					memberDBCP.addMember(member);
-				}
-
-				
-				
-			} else if (command.equals("delMember")) {
-				String mid = request.getParameter("mid");
-				if (mid != null) {
-					memberDBCP.delMember(mid);
-					System.out.printf("[memberlist] delMember : (%s)", mid);
-
-				}
-			}
-
-		}
-
+		
+		List<MemberVO> members = (List<MemberVO>)request.getAttribute("members");
+		
 		PrintWriter out = response.getWriter();
+		
 		outHtmlHeader(out);
-		outHtmlMembers(out);
+		outHtmlMembers(out, members);
 		outHtmlFooter(out);
+		
 
 	}
 
@@ -85,10 +61,7 @@ public class MemberView extends HttpServlet {
 		out.print("</tr>");
 	}
 
-	static void outHtmlMembers(PrintWriter out) {
-		MemberDBCP memberDBCP = new MemberDBCP();
-		List<MemberVO> members = memberDBCP.getMembers();
-
+	static void outHtmlMembers(PrintWriter out, List<MemberVO> members) {
 		for (int cnt = 0; cnt < members.size(); cnt++) {
 			MemberVO member = (MemberVO) members.get(cnt);
 			out.print("<tr>");
