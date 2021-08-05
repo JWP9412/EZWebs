@@ -12,8 +12,6 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import soldb2.OracleConnector;
-
 public class MemberDBCP {
 	private DataSource datasource = null;
 	private Connection conn = null;

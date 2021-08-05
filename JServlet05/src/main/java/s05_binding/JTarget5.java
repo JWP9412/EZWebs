@@ -18,7 +18,7 @@ public class JTarget5 extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		
-		String msg = (String)request.getAttribute("msg");
+		String msg = (String)request.getAttribute("msgx");
 		
 		PrintWriter out = response.getWriter();
 		out.println("<html><body>");

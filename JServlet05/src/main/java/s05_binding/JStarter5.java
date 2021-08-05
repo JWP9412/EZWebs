@@ -17,7 +17,7 @@ public class JStarter5 extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		
 		request.setCharacterEncoding("utf-8");
-		request.setAttribute("msg", "환영합니다");
+		request.setAttribute("msgx", "환영합니다");
 		
 //		response.sendRedirect("jtarget5");
 		RequestDispatcher dispatch = request.getRequestDispatcher("jtarget5");
