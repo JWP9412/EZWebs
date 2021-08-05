@@ -15,19 +15,19 @@ import javax.servlet.http.HttpServletResponse;
 public class MemberView extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
-		System.out.println("[MemberView] (/membrlist), init...");
+		System.out.println("[MemberView] (/memberview), init...");
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		System.out.println("[MemberView] (/membrlist), GET...");
-		doProcess(request, response);
-
-	}
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+//			throws ServletException, IOException {
+//		System.out.println("[MemberView] (/memberview), GET...");
+//		doProcess(request, response);
+//
+//	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("[MemberView] (/membrlist), POST...");
+		System.out.println("[MemberView] (/memberview), POST...");
 		doProcess(request, response);
 	}
 
@@ -62,6 +62,9 @@ public class MemberView extends HttpServlet {
 	}
 
 	static void outHtmlMembers(PrintWriter out, List<MemberVO> members) {
+		if(members == null ) {
+			return;
+		}
 		for (int cnt = 0; cnt < members.size(); cnt++) {
 			MemberVO member = (MemberVO) members.get(cnt);
 			out.print("<tr>");

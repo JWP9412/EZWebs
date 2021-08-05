@@ -61,7 +61,7 @@ public class MemberDBCP {
 			stmt = conn.prepareStatement(sql);
 			rs = stmt.executeQuery();
 
-			System.out.printf("[ID]  [NAME]  [TEL]%n");
+//			System.out.printf("[ID]  [NAME]  [TEL]%n");
 
 			while (rs.next()) {
 				String mid = rs.getString("mid");
