@@ -10,7 +10,11 @@
 	- 자바 코드
 	- <% ... %>
 	
-3. 표현식(expresson tag)
+3. 표현식(expression tag)
 	- 변수의 값을 출력
 	- <%= ... %>
 	- out.print() 메소드 안에 선언
+
+(JSP -> Eclipse)	
+C:\JWorkspace\EZWebs\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\work\Catalina\localhost\JSP01\org\apache\jsp
+	
