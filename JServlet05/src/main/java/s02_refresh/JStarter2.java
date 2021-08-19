@@ -15,6 +15,14 @@ public class JStarter2 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		response.addHeader("Refresh","2;url=jtarget2");	// 2초 후에 jtarget2로 이동
+		
+		PrintWriter out = response.getWriter();
+		out.println("<html><body>");
+		out.println("<h3>refresh</h3>");
+		out.println("<hr>");
+		out.println("<p>2초후에 이동합니다</p>");
+		
+		out.println("</html></body>");
 	}
 
 }

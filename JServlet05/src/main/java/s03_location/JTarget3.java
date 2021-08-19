@@ -18,7 +18,7 @@ public class JTarget3 extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.println("<html><body>");
-		out.println("<h1>refresh</h1>");
+		out.println("<h1>location</h1>");
 		out.println("<hr>");
 		out.println("<p>jstarter3에서 jtarget3으로 이동</p>");
 		

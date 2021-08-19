@@ -24,7 +24,7 @@ public class JTarget1a extends HttpServlet {
 		out.println("<h3>sendRedirect('jtarget1a')</h3>");
 		out.println("<hr>");
 		out.println("<p>jstarter1a에서 sendRedirect('jtarget1a')으로 이동</p>");
-		out.println("<p>msg: "+msg+"</p>");
+		out.println("<p>msg: "+ msg +"</p>");
 		out.println("</html></body>");
 		
 	}
