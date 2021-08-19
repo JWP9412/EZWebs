@@ -18,7 +18,7 @@ public class Login extends HttpServlet {
 	public void destroy() {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Login.doGet()");
+		System.out.println("Login.doPost()");
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8"); //MIME-TYPE
 		
