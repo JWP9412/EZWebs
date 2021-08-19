@@ -1,0 +1,41 @@
+
+--------------------------------------------------------------------------------
+[테이블 스페이스 생성]
+--------------------------------------------------------------------------------
+CREATE TABLESPACE "SOLDB" DATAFILE 
+	'C:\DBMS\ORACLE11G\APP\ORACLE\ORADATA\XE\SOLDB.DBF' SIZE 10485760
+	AUTOEXTEND ON NEXT 10485760 MAXSIZE 32767M
+	LOGGING ONLINE PERMANENT BLOCKSIZE 8192
+ 	EXTENT MANAGEMENT LOCAL AUTOALLOCATE DEFAULT NOCOMPRESS  SEGMENT SPACE MANAGEMENT AUTO;
+
+
+
+--------------------------------------------------------------------------------
+[사용자 계정 생성]
+--------------------------------------------------------------------------------
+CREATE USER "SOLUSER" IDENTIFIED BY VALUES 'SOLUSER'
+      DEFAULT TABLESPACE "SOLDB"
+      TEMPORARY TABLESPACE "TEMP";
+
+   GRANT "CONNECT" TO "SOLUSER";
+   GRANT "RESOURCE" TO "SOLUSER";
+   GRANT "DBA" TO "SOLUSER";
+
+GRANT UNLIMITED TABLESPACE TO "SOLUSER";
+
+
+
+--------------------------------------------------------------------------------
+[테이블 생성]
+--------------------------------------------------------------------------------
+CREATE TABLE HELLO
+(
+    HID VARCHAR2(10) NOT NULL,
+    HNAME VARCHAR2(20) NOT NULL,
+    HTEL VARCHAR2(20),
+    CONSTRAINT HELLO_PK PRIMARY KEY(HID) ENABLE
+);
+
+--------------------------------------------------------------------------------
+[THE END]
+--------------------------------------------------------------------------------

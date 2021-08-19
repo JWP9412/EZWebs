@@ -1,0 +1,9 @@
+
+[JDBC Driver]
+https://www.oracle.com/kr/database/technologies/appdev/jdbc-downloads.html
+
+Oracle Database 12.2.0.1 JDBC Driver & UCP Downloads
+https://www.oracle.com/database/technologies/jdbc-ucp-122-downloads.html
+
+Filename: ojdbc8.jar
+Install Path: Tomcat/lib/ojdbc8.jar
