@@ -7,7 +7,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
 public class UserController extends MultiActionController {
+	
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// login은 action-servlet의 <prop key="/login/login.do">login</prop> 에서 넘어온다
 		String userID = "";
 		String passwd = "";
 		ModelAndView mav = new ModelAndView();
@@ -21,24 +23,24 @@ public class UserController extends MultiActionController {
 		return mav;
 	}
 	
-	/*
-	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	
+	public ModelAndView login2(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String userID = "";
 		String passwd = "";
 		ModelAndView mav = new ModelAndView();
 		request.setCharacterEncoding("utf-8");
 		userID = request.getParameter("userID");
 		passwd = request.getParameter("passwd");
-		String viewName=getViewName(request);
+		String viewName = getViewName(request);
 		
 		mav.addObject("userID", userID);
 		mav.addObject("passwd", passwd);
 		//mav.setViewName("result");
 		mav.setViewName(viewName);
-	    System.out.println("ViewName:"+viewName);
+	    System.out.println("login2: ViewName:"+viewName);
 		return mav;
 	}
-	*/
+	
 
 	public ModelAndView memberInfo(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");

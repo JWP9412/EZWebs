@@ -16,7 +16,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
-		<property name="prefix" value="/test/" />
+		<property name="prefix" value="/login/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 
@@ -24,12 +24,12 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
-				<prop key="/test/*.do">userController</prop>
+				<prop key="/login/*.do">userController</prop>
 			</props>
 		</property>
 	</bean>
 
-	<bean id="userController" class="com.spring.ex02.UserController">
+	<bean id="userController" class="com.spring.ex02.UserController"> 
 		<property name="methodNameResolver">
 			<ref local="userMethodNameResolver" />
 		</property>
@@ -39,8 +39,9 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		  class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
 		<property name="mappings">
 			<props>
-				<prop key="/test/login.do">login</prop>
-				<prop key="/test/memberInfo.do">memberInfo</prop> 
+				<prop key="/login/login.do">login</prop>
+				<prop key="/login/login2.do">login2</prop>
+				<prop key="/login/memberInfo.do">memberInfo</prop> 
 			</props>
 		</property>
 	</bean>
