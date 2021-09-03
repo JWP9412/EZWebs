@@ -7,6 +7,6 @@
 <title>Welcome to JSP</title>
 </head>
 <body>
-	<h1>Java Server Pages의 세계에 오신 것을 환영합니다.</h1>
+	<h1>Java Server Pages의 세계에 오신 것을 환영합니다</h1>
 </body>
 </html>

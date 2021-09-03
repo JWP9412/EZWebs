@@ -13,23 +13,9 @@
 </body>
 <%
 	request.setCharacterEncoding("utf-8");
-	
-	if(session != null){
-		boolean isSession = request.isRequestedSessionIdValid();
-		String userid = (String)session.getAttribute("userid");
-		System.out.printf("[memberlist] userid : (%s)(%b)\n",userid,isSession);
-		
-		if(isSession != true || userid = null || userid.isEmpty()){
-			response.sendRedirect("memberlogin.html");
-			return;
-		}
-	}else{
-		response.sendRedirect("memberlogin.html");
-		return;
-	}
-	
+
 	MemberDBCP memberDBCP = new MemberDBCP();
-	
+
 	String command = request.getParameter("command");
 	if(command != null) {
 		

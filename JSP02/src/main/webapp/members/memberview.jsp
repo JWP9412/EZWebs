@@ -48,5 +48,4 @@
 		
 	</table>
 	<a href='memberreg.html'>멤버등록</a>
-	<a href='memberlogout.jsp'>로그아웃</a>
 </html>

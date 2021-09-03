@@ -10,16 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 @WebServlet("/session01")
 public class Session01 extends HttpServlet {
-
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		
 		PrintWriter out = response.getWriter();
+		
 		HttpSession session = request.getSession();
-		session.setAttribute("name","홍길동");
+		session.setAttribute("name", "홍길동");
 		
 		out.print("<html><body>");
 		
